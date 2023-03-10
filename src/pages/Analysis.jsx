@@ -7,7 +7,7 @@ const Analysis = () => {
   const [emoteCount, setEmoteCount] = useState({});
   const [unResolved, setUnresolved] = useState(0);
   const [resolved, setResolved] = useState(0);
-  const [emotions, setEmotions] = useState([]);
+  // const [emotions, setEmotions] = useState([]);
   const getData = async () => {
     const s = await axios.get(
       "https://backend-chat-app.azurewebsites.net/db/emotions/count"
