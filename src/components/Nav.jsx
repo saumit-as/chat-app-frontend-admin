@@ -17,14 +17,14 @@ const Nav = () => {
 
   return (
     <div>
-      <nav className="flex items-center justify-between flex-wrap bg-[#181818] p-6">
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <span className="font-semibold text-xl tracking-tight">Admin</span>
+      <nav className="flex flex-row items-center justify-between flex-wrap bg-[#181818] p-6">
+        <div className="flex items-center flex-shrink-0 text-white">
+          <span className="font-semibold text-xl tracking-tight ">Admin</span>
         </div>
 
         <div>
-          <div className="w-full block flex-grow  lg:flex lg:items-center lg:w-auto">
-            <div className="text-sm flex items-center">
+          <div className="w-full block flex-grow">
+            <div className="text-sm flex flex-row ">
               <Link
                 className="block lg:inline-block   hover:text-white mr-4 flex-1 ml-3 whitespace-nowrap text-white no-underline"
                 to="/analysis"

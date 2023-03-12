@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
+import MobileNav from "../components/MobileNav";
 
 const Analysis = () => {
   const [emoteCount, setEmoteCount] = useState({});
@@ -25,9 +26,14 @@ const Analysis = () => {
   const handleClick = () => {};
   return (
     <div>
-      <Nav />
+      <div className="hidden lg:block">
+        <Nav />
+      </div>
+      <div className="lg:hidden">
+        <MobileNav />
+      </div>
       <div>
-        <div className="flex mt-2 w-fit mx-auto">
+        <div className="flex mt-2 sm:w-fit flex-col sm:flex-row mx-auto">
           {Object.keys(emoteCount).map((obj, i) => {
             return (
               <div>
@@ -45,7 +51,7 @@ const Analysis = () => {
             );
           })}
         </div>
-        <div className="grid grid-cols-2 gap-2 w-full h-full mt-4">
+        <div className="grid grid-cols-1  sm:grid-cols-2 gap-3 w-full h-full mt-4">
           <div className="bg-rose-200 mx-5 rounded p-3 drop-shadow-xl">
             <h1>Unresolved</h1>
             <p>Count {unResolved}</p>

@@ -74,6 +74,7 @@ const Input = () => {
     setImg(null);
   };
   return (
+    // <div className="w-full bg-[#edf0f6] absolute bottom-0">
     <div className="input">
       <input
         type="text"
@@ -81,8 +82,8 @@ const Input = () => {
         onChange={(e) => setText(e.target.value)}
         value={text}
       />
-      <div className="send">
-        <img src={Attach} alt="" />
+      <div className="flex gap-2  send">
+        {/* <img src={Attach} alt="" /> */}
         <input
           type="file"
           style={{ display: "none" }}
@@ -90,11 +91,17 @@ const Input = () => {
           onChange={(e) => setImg(e.target.files[0])}
         />
         <label htmlFor="file">
-          {/* <img src={Img} alt="" /> */}
+          <img src={Attach} alt="" />
         </label>
-        <button onClick={handleSend}>Send</button>
+        <button
+          // className="bg-[#0b5ed7] text-white p-2 rounded"
+          onClick={handleSend}
+        >
+          Send
+        </button>
       </div>
     </div>
+    // </div>
   );
 };
 

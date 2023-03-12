@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ChatContext } from "../context/ChatContext";
 import Nav from "../components/Nav";
+import MobileNav from "../components/MobileNav";
 
 const Emotions = () => {
   const { dispatch } = useContext(ChatContext);
@@ -31,8 +32,14 @@ const Emotions = () => {
   }, []);
 
   return (
-    <div>
-      <Nav />
+    <div className="grid items-center">
+      <div className="hidden lg:block ">
+        <Nav />
+      </div>
+
+      <div className="lg:hidden z-20">
+        <MobileNav />
+      </div>
 
       <div className=" mx-auto mt-2 relative overflow-x-auto shadow-md sm:rounded-lg w-2/3">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -47,14 +54,11 @@ const Emotions = () => {
               <th scope="col" className="px-6 py-3">
                 Emoji
               </th>
-              <th scope="col" className="px-6 py-3">
+              {/* <th scope="col" className="px-6 py-3">
                 Uid
-              </th>
+              </th> */}
               <th scope="col" className="px-6 py-3">
                 Status
-              </th>
-              <th scope="col" className="px-6 py-3">
-                <span className="sr-only">Edit</span>
               </th>
             </tr>
           </thead>
@@ -66,9 +70,9 @@ const Emotions = () => {
                   <td className="px-6 py-4">{emotion.name}</td>
                   <td className="px-6 py-4">{emotion.emotion}</td>
                   <td className="px-6 py-4">{emotion.emoji}</td>
-                  <td className="px-6 py-4">{emotion.uid}</td>
+                  {/* <td className="px-6 py-4">{emotion.uid}</td> */}
 
-                  <td>
+                  <td className="flex  justify-center py-4">
                     <button
                       className={
                         emotion.attended

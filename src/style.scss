@@ -297,7 +297,7 @@
         bottom: 20px;
         width: 65%;
         // height: 50px;
-        background-color: #ffffff;
+        background-color: #fff;
         padding: 10px;
         display: flex;
         align-items: center;
@@ -318,10 +318,11 @@
         .send {
           display: flex;
           align-items: center;
-          gap: 10px;
+          // gap: 10px;
 
-          img {
-            height: 24px;
+          label {
+            // height: 25px;
+            width: fit-content;
             cursor: pointer;
           }
 
@@ -332,6 +333,7 @@
             color: #ffffff;
             background-color: #0b5ed7;
             cursor: pointer;
+            margin-right: 15px;
           }
         }
       }
