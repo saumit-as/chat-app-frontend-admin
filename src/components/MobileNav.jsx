@@ -1,6 +1,8 @@
 import React from "react";
 import { Menu } from "@headlessui/react";
 import { Link } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
 const MobileNav = () => {
   return (
@@ -46,6 +48,7 @@ const MobileNav = () => {
                   </Link>
                 )}
               </Menu.Item>
+
               <Menu.Item>
                 <Link
                   className="block lg:inline-block   hover:text-white mr-4 flex-1 ml-3 whitespace-nowrap text-white no-underline"
@@ -53,6 +56,14 @@ const MobileNav = () => {
                 >
                   Detailed View
                 </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <button
+                  className="hover:text-white mr-4 flex-1 ml-3 whitespace-nowrap text-white no-underline bg-rose-800 w-fit p-2 rounded"
+                  onClick={() => signOut(auth)}
+                >
+                  logout
+                </button>
               </Menu.Item>
             </div>
           </Menu.Items>

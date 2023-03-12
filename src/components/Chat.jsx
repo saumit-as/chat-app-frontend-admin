@@ -60,7 +60,7 @@ const Chat = () => {
             </div>
           </Popover.Button>
 
-          <Popover.Panel className="absolute z-10 bg-slate-600 w-full">
+          <Popover.Panel className="absolute z-10 bg-white w-full">
             <div className="grid p-5">
               {Object.entries(chats)
                 ?.sort((a, b) => b[1].date - a[1].date)
@@ -70,7 +70,17 @@ const Chat = () => {
                     key={chat[0]}
                     onClick={() => handleSelect(chat[1].userInfo)}
                   >
-                    <div className="userChatInfo">
+                    <div className=" flex gap-2">
+                      <img
+                        className="rounded-2xl"
+                        style={{
+                          height: "25px",
+                          width: "10%",
+                          cursor: "pointer",
+                        }}
+                        src={chat[1].userInfo.photoURL}
+                        alt=""
+                      />
                       <span>{chat[1].userInfo.displayName}</span>
                     </div>
                   </Popover.Button>

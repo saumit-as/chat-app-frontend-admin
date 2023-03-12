@@ -51,9 +51,7 @@ const Emotions = () => {
               <th scope="col" className="px-6 py-3">
                 Emotion
               </th>
-              <th scope="col" className="px-6 py-3">
-                Emoji
-              </th>
+
               {/* <th scope="col" className="px-6 py-3">
                 Uid
               </th> */}
@@ -68,8 +66,8 @@ const Emotions = () => {
               return (
                 <tr key={index}>
                   <td className="px-6 py-4">{emotion.name}</td>
-                  <td className="px-6 py-4">{emotion.emotion}</td>
-                  <td className="px-6 py-4">{emotion.emoji}</td>
+                  <td className="mx-auto sm:px-6 py-4">{`${emotion.emotion} ${emotion.emoji}`}</td>
+                  {/* <td className="px-6 py-4">{emotion.emoji}</td> */}
                   {/* <td className="px-6 py-4">{emotion.uid}</td> */}
 
                   <td className="flex  justify-center py-4">
